@@ -2,12 +2,11 @@ management:
   endpoints:
     web:
       exposure:
-        include:
-          '*'
+        include: '*'
           
 spring: 
   datasource:
-    url: jdbc:mysql://localhost:3306/school
+    url: jdbc:mysql://localhost:3306/school?createDatabaseIfNotEist=true
     username: root
     password: nuwan
     driver-class-name: com.mysql.jdbc.Driver
@@ -15,3 +14,4 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl    
+#      ddl-auto: update
