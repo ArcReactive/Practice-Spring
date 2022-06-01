@@ -27,10 +27,12 @@ public class MainController {
 		return studentService.save(student);
     }
     
+    //fetching student data by id
     @RequestMapping(value = "/student", method = RequestMethod.GET)
     public ResponseEntity<Student> fetchStudent(@RequestParam int id) {
     	Student student = studentService.fetchStudentById(id);
     	
+    	//set response body
     	if(student == null) {
     		return ResponseEntity.notFound().build();
     	}

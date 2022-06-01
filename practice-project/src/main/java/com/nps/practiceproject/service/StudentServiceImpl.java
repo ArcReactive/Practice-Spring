@@ -14,10 +14,12 @@ public class StudentServiceImpl implements StudentService{
 	@Autowired
 	StudentRepository studentRepository;
 	
+	//save student data
 	public Student save(Student student) {
 		return studentRepository.save(student);	
 	}
 
+	//fetch student data by id
 	public Student fetchStudentById(int id) {
 		Optional<Student> student = studentRepository.findById(id);
 		

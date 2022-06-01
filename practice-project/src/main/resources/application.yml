@@ -6,7 +6,7 @@ management:
           
 spring: 
   datasource:
-    url: jdbc:mysql://localhost:3306/school?createDatabaseIfNotEist=true
+    url: jdbc:mysql://localhost:3306/school?createDatabaseIfNotExist=true #set crate db if not exist
     username: root
     password: nuwan
     driver-class-name: com.mysql.jdbc.Driver
