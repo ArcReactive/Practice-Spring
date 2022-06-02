@@ -7,4 +7,6 @@ public interface StudentService {
 	Student save(Student student);
 	
 	Student fetchStudentById(int id);
+	
+	String deleteStudentById(int id);
 }

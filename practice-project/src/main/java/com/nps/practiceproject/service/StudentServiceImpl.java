@@ -29,4 +29,16 @@ public class StudentServiceImpl implements StudentService{
 		
 		return null;
 	}
+	
+	//delete student data by id
+	public String deleteStudentById(int id) {
+		Optional<Student> student = studentRepository.findById(id);
+		
+		if(student.isPresent()) {
+			studentRepository.deleteById(id);
+			return "deleted";
+		}
+		
+		return null;
+	}
 }

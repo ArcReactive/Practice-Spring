@@ -22,6 +22,7 @@ public class MainController {
         return "Test Main Complete";
     }
 
+    //saving student details
     @RequestMapping(value = "/student", method = RequestMethod.POST)
     public Student save(@RequestBody Student student) {
 		return studentService.save(student);
@@ -42,4 +43,18 @@ public class MainController {
     	
     }
 
+    //deleting student data by id
+    @RequestMapping(value = "/student", method = RequestMethod.DELETE)
+    public ResponseEntity<String> deleteStudent(@RequestParam int id) {
+    	String confirm = studentService.deleteStudentById(id);
+    	
+    	//set response body
+    	if(confirm == null) {
+    		return ResponseEntity.notFound().build();
+    	}
+    	else {
+    		return ResponseEntity.ok().body("Deleted Student Records");
+    	}
+    	
+    }
 }
